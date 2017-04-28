@@ -73,12 +73,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Model
+    | Authentication
     |--------------------------------------------------------------------------
     */
 
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
+
+    // The guard that protects the Backpack admin panel. The default guard will
+    // be used if this is null.
+    'guard' => null,
+
+    // The password reset configuration for Backpack. The default configuration
+    // will be used if this is null.
+    'passwords' => null,
 
     // What kind of avatar will you like to show to the user?
     // Default: gravatar (automatically use the gravatar for his email)
@@ -102,4 +110,5 @@ return [
     */
 
     'license_code' => env('BACKPACK_LICENSE', false),
+
 ];
