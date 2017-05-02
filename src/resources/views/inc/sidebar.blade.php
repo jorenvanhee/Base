@@ -1,4 +1,4 @@
-@if (Auth::check())
+@if ($backpackAuth->check())
     <!-- Left side column. contains the sidebar -->
     <aside class="main-sidebar">
       <!-- sidebar: style can be found in sidebar.less -->
@@ -6,10 +6,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="{{ backpack_avatar_url(Auth::user()) }}" class="img-circle" alt="User Image">
+            <img src="{{ backpack_avatar_url($backpackAuth->user()) }}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p>{{ Auth::user()->name }}</p>
+              <p>{{ $backpackAuth->user()->name }}</p>
             <small><small><a href="{{ route('backpack.account.info') }}"><span><i class="fa fa-user-circle-o"></i> {{ trans('backpack::base.my_account') }}</span></a> &nbsp;  &nbsp; <a href="{{ backpack_url('logout') }}"><i class="fa fa-sign-out"></i> <span>{{ trans('backpack::base.logout') }}</span></a></small></small>
           </div>
         </div>
